@@ -1,0 +1,17 @@
+from  selenium import webdriver
+from time import sleep
+driver = webdriver.Chrome()
+driver.get('file:///C:/Users/86152/Desktop/web%E8%87%AA%E5%8A%A8%E5%8C%96-Day02/01-%E8%AF%BE%E5%A0%82%E8%B5%84%E6%96%99/sucai/%E6%B3%A8%E5%86%8C%E5%AE%9E%E4%BE%8B.html')
+driver.find_element_by_name('user').send_keys('admin')
+driver.find_element_by_name('password').send_keys('123456')
+sleep(2)
+driver.switch_to.frame('myframe1')
+driver.find_element_by_name('userA').send_keys('admin')
+driver.find_element_by_name('passwordA').send_keys('123456')
+driver.switch_to.default_content()
+driver.switch_to.frame('myframe2')
+driver.find_element_by_name('userB').send_keys('admin')
+driver.find_element_by_name('password').send_keys('123456')
+sleep(2)
+driver.switch_to.default_content()
+driver.quit()
